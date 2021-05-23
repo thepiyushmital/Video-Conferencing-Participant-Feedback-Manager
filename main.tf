@@ -3,10 +3,41 @@ provider "aws" {
   access_key = var.access_key
   secret_key = var.secret_key
 }
+
 module "dynamo_tables" {
   source = "./dynamodb_tables"
   access_key = var.access_key
   secret_key = var.secret_key
+  # key_name = var.key_name
+  # ip_range = var.ip_range
+}
+
+module "lambda_functions" {
+  access_key = var.access_key
+  secret_key = var.secret_key
+  source = "./lambda_functions"
+  # key_name = var.key_name
+  # ip_range = var.ip_range
+}
+
+module "api_gateways" { 
+  access_key = var.access_key
+  secret_key = var.secret_key
+  source = "./api_gateways"
+  connect_lambda_invoke_arn = "${module.lambda_functions.connect_lambda_invoke_arn}"
+  disconnect_lambda_invoke_arn = "${module.lambda_functions.disconnect_lambda_invoke_arn}"
+  collectfeedback_lambda_invoke_arn = "${module.lambda_functions.collectfeedback_lambda_invoke_arn}"
+  connect_lambda_function_name = "${module.lambda_functions.connect_lambda_function_name}"
+  disconnect_lambda_function_name = "${module.lambda_functions.disconnect_lambda_function_name}"
+  collectfeedback_lambda_function_name = "${module.lambda_functions.collectfeedback_lambda_function_name}"
+}
+
+module "step_functions" {
+  access_key = var.access_key
+  secret_key = var.secret_key
+  source = "./step_functions"
+  generatefeedback_lambda_arn = "${module.lambda_functions.generatefeedback_lambda_arn}"
+
   # key_name = var.key_name
   # ip_range = var.ip_range
 }
