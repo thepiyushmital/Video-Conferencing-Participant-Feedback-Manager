@@ -1,4 +1,4 @@
-# Video-Conferencing-Participant-Feedback-Manager (AWS | TERRAFORM | PYTHON)
+# Video-Conferencing-Participant-Feedback-Manager (Python | Aws | Terraform)
 
 # Pre-requisites to run the project
 1. An AWS account
@@ -13,26 +13,26 @@
     
 
 To create new routes for websocket API
-1. Custom routes can't start with $ 
-2. Predefined routes are $default, $connect, $disconnect
-3. Example routes: collectfeedback
+- Custom routes can't start with $ 
+- Predefined routes are $default, $connect, $disconnect
+- Example routes: collectfeedback
 
 
-Integration type: AWS_PROXY 
-Without it, you wont be able to get connection ID as a part of requestContext
+Integration type: AWS_PROXY
+- Without it, you wont be able to get connection ID as a part of requestContext
 
 To connect to websocket api
-wscat -c wss://<API_ID>.execute-api.us-east-1.amazonaws.com/dev
+-  wscat -c wss://<API_ID>.execute-api.us-east-1.amazonaws.com/dev
 
 
 To register client and meeting
-{ "action": "onconnect", "meetingId": "ADEFFESA", "username": "pmital", "imgURL": "img" }
+- { "action": "onconnect", "meetingId": "ADEFFESA", "username": "pmital", "imgURL": "img" }
 
 To send fresh-feedback for speaker
-{"speakerName": "pmital", "remarkType": remarkType, "imgURL": speakerImgURL, "transcriptData": "Transcript here"}
+- {"speakerName": "pmital", "remarkType": remarkType, "imgURL": speakerImgURL, "transcriptData": "Transcript here"}
 
 To send response-feedback for speaker invoked by some other participant
-{"speakerName": "pmital", "roundId": "ROUND2", "remarkType": remarkType, "imgURL": speakerImgURL, "transcriptData": "Transcript here"}
+- {"speakerName": "pmital", "roundId": "ROUND2", "remarkType": remarkType, "imgURL": speakerImgURL, "transcriptData": "Transcript here"}
 
 RESOURCES:
 
