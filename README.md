@@ -1,4 +1,4 @@
-# aws-terraform
+# Video-Conferencing-Participant-Feedback-Manager (AWS | TERRAFORM | PYTHON)
 
 # Pre-requisites to run the project
 1. An AWS account
