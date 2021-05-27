@@ -3,7 +3,7 @@
 # Pre-requisites to run the project
 1. An AWS account
 2. AWS cli configured on terminal/cmd
-3. Terraform
+3. Terraform cli configured on terminal/cmd
 
 
 # To run the project
