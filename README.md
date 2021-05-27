@@ -36,7 +36,7 @@ To send response-feedback for speaker invoked by some other participant
 
 RESOURCES:
 
-Forked from: 
+Terraform resources: 
 https://github.com/ustaxcourt/ef-cms/blob/staging/iam/terraform/environment-specific/main/lambda.tf
 
 Websocket chat application:
