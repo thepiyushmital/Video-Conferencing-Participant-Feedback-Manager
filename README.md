@@ -11,6 +11,8 @@
 2. terraform plan
 3. terraform apply
     
+# To view Demo of the embedded version in Avaya Spaces (React JS based UI)
+https://drive.google.com/file/d/1GI6etf35l67AAWQ0XA8UF4lueQKWyRT4/view?usp=sharing
 
 To create new routes for websocket API
 - Custom routes can't start with $ 
