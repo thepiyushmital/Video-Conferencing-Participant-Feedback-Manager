@@ -23,9 +23,10 @@ To create new routes for websocket API
 Integration type: AWS_PROXY
 - Without it, you wont be able to get connection ID as a part of requestContext
 
+# API's involved
+
 To connect to websocket api
 -  wscat -c wss://<API_ID>.execute-api.us-east-1.amazonaws.com/dev
-
 
 To register client and meeting
 - { "action": "onconnect", "meetingId": "ADEFFESA", "username": "pmital", "imgURL": "img" }
@@ -36,7 +37,7 @@ To send fresh-feedback for speaker
 To send response-feedback for speaker invoked by some other participant
 - {"speakerName": "pmital", "roundId": "ROUND2", "remarkType": remarkType, "imgURL": speakerImgURL, "transcriptData": "Transcript here"}
 
-RESOURCES:
+# Resources:
 
 Terraform resources: 
 https://github.com/ustaxcourt/ef-cms/blob/staging/iam/terraform/environment-specific/main/lambda.tf
